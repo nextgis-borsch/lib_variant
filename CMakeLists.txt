@@ -45,8 +45,11 @@ report_version(${PROJECT_NAME} ${VERSION})
 configure_file(${CMAKE_MODULE_PATH}/cmake_uninstall.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake IMMEDIATE @ONLY)
 
 include_directories ( ${CMAKE_CURRENT_SOURCE_DIR} )
-file(GLOB PUBLIC_HDRS
-    "*.hpp"
+set(VARIANT_HDRS
+    optional.hpp
+    recursive_wrapper.hpp
+    variant.hpp
+    variant_io.hpp
 )
 
 export(TARGETS ${LIB_NAME} FILE ${LIB_NAME}-exports.cmake)
@@ -57,5 +60,5 @@ if(NOT CYGWIN)
 endif()
 
 if(NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL )
-    install(FILES ${PUBLIC_HDRS} DESTINATION "${INSTALL_INC_DIR}")
+    install(FILES ${VARIANT_HDRS} DESTINATION "${INSTALL_INC_DIR}")
 endif()

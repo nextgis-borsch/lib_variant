@@ -42,7 +42,7 @@ check_version(VARIANT_MAJOR_VERSION VARIANT_MINOR_VERSION VARIANT_REV_VERSION)
 set(VERSION ${VARIANT_MAJOR_VERSION}.${VARIANT_MINOR_VERSION}.${VARIANT_REV_VERSION})
 report_version(${PROJECT_NAME} ${VERSION})
 
-configure_file(${CMAKE_MODULE_PATH}/cmake_uninstall.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake IMMEDIATE @ONLY)
+configure_file(${CMAKE_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake IMMEDIATE @ONLY)
 
 include_directories ( ${CMAKE_CURRENT_SOURCE_DIR} )
 set(VARIANT_HDRS
